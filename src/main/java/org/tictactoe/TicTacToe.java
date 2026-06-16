@@ -33,7 +33,7 @@ public class TicTacToe {
                 continue;
             }
 
-            if (hasWinner()) {
+            if (hasWinner(currentPlayer.getMarker())) {
                 board.print();
                 System.out.println("Player " + currentPlayer.getMarker() + " wins!");
                 break;
@@ -55,9 +55,8 @@ public class TicTacToe {
         else currentPlayer = player1;
     }
 
-    public boolean hasWinner() {
+    public boolean hasWinner(char m) {
         char[][] c = board.getCells();
-        char m = currentPlayer.getMarker();
         for (int i = 0; i < 3; i++) {
             if (c[i][0] == m && c[i][1] == m && c[i][2] == m) return true;
             if (c[0][i] == m && c[1][i] == m && c[2][i] == m) return true;
@@ -65,5 +64,9 @@ public class TicTacToe {
         if (c[0][0] == m && c[1][1] == m && c[2][2] == m) return true;
         if (c[0][2] == m && c[1][1] == m && c[2][0] == m) return true;
         return false;
+    }
+
+    public void placeForTest(int row, int col, char marker) {
+        board.place(row, col, marker);
     }
 }
