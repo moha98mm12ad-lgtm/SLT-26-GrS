@@ -1,5 +1,4 @@
-package org.TicTacToe;
-git status
+package org.tictactoe;
 public class Board {
     private char[][] cells;
 

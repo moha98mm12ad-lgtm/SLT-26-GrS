@@ -1,4 +1,4 @@
-package org.TicTacToe;
+package org.tictactoe;
 
 public class Player {
     private char marker;
